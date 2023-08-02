@@ -5,7 +5,10 @@ import 'package:orderin_app/widgets/menu_header.dart';
 import '../widgets/customized_button.dart';
 
 class MyCartScreen extends StatefulWidget {
-  const MyCartScreen({super.key});
+  final String imageName;
+  final String foodName;
+  const MyCartScreen(
+      {super.key, required this.foodName, required this.imageName});
 
   @override
   State<MyCartScreen> createState() => _MyCartScreenState();
@@ -21,26 +24,26 @@ class _MyCartScreenState extends State<MyCartScreen> {
             const EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 10),
         child: Stack(
           children: [
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                MenuHeader(
+                const MenuHeader(
                   isCart: true,
                   title: "My Cart",
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CartTile(
-                  foodName: "Cheese Hot\nHamburger",
-                  imageName: "assets/burger1.jpeg",
-                  price: "\$18.99",
+                  foodName: widget.foodName,
+                  imageName: widget.imageName,
+                  price: "\$10.99",
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                CartTile(
+                const CartTile(
                   foodName: "Cheese Hot\nHamburger",
                   imageName: "assets/burger1.jpeg",
                   price: "\$18.99",

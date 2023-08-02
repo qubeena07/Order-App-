@@ -59,7 +59,12 @@ class _MenuScreenState extends State<MenuScreen> {
                   child: CustomizedButton(
                       buttonTitle: "Add to Cart",
                       onTap: () {
-                        navigate(context, const MyCartScreen());
+                        navigate(
+                            context,
+                            MyCartScreen(
+                              foodName: widget.foodName,
+                              imageName: widget.imageName,
+                            ));
                       }))
             ],
           )),
